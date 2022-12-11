@@ -12,7 +12,7 @@ import SignUpForm from './SignUp.js';
 import UserInformation from './UserInformation.js';
 import UserProfile from './UserProfile.js';
 import HomePage from './HomePage.js';
-import MapComponent from './Map.js';
+import Maps from './MapData.js';
 import Carousel from './Carousel.js'
 
 
@@ -94,23 +94,13 @@ function App() {
             });
     }
 
-  //   const handleSignOut = (event) => {
-  //     event.preventDefault();
-  //     setLoggedIn(false);
-  //     setUser({user_id: "",
-  //         firstName: "",
-  //         lastName: "",
-  //         email: "",
-  //         password: "" });
-  // };
-
   return (
     <BrowserRouter>
       <NavBar inSession = {inSession}/>
       <Routes>
       <Route exact path="/" element = {<Fragment>
         <HomePage/>
-        <MapComponent/>
+        <Maps/>
         <Carousel/>
         </Fragment>}/>
         <Route exact path="/constructors" element = {<Constructors/>}/>

@@ -1,7 +1,7 @@
 """Server for F-1 app."""
 
 from flask import Flask, render_template, request, flash, session, redirect, jsonify
-from model import connect_to_db, db, Constructor, Driver, Race, Result, Like, User
+from model import connect_to_db, db, Constructor, Driver, Race, Result, Like, User, Circuit
 import json
 import cloudinary.uploader
 import crud
@@ -227,6 +227,20 @@ def in_session():
         user_in_session['in_session'] = False
     return jsonify(user_in_session)  
 
+@app.route("/api/log-out", methods=["POST"])
+def remove_from_session():
+    """Logged out a user and remove them from the flask session"""
+
+    logged_out = request.json.get("removeSession")
+    print("*********************LOGGED OUT??!")
+    print(logged_out)
+    out_of_session = {}
+    if logged_out == True:
+        out_of_session["remove_session"] = True
+        session.clear()
+
+    return jsonify(out_of_session)
+
 # @app.route("/api/cloudinary")
 # def handle_cloudinary():
 #     """Handle cloudinary"""
@@ -237,6 +251,13 @@ def in_session():
 #     user.img = picture
 
 #     return jsonify(user.to_dict())
+
+@app.route("/api/circuits")
+def circuit_data():
+    """Circuit data"""
+    circuits = Circuit.query.limit(10).all()
+    print(circuits)
+    return jsonify({circuit.circuit_id: circuit.to_dict() for circuit in circuits})
     
 
 

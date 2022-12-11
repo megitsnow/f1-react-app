@@ -226,6 +226,18 @@ class Circuit(db.Model):
     alt = db.Column(db.String, nullable = True)
     url = db.Column(db.String(255), nullable = False)
 
+    def to_dict(self):
+        return {'circuit_id': self.circuit_id,
+                'circuit_ref': self.circuit_ref,
+                'name': self.name,
+                'location': self.location,
+                'country': self.country,
+                'lat': self.lat,
+                'lng': self.lng,
+                'alt': self.alt,
+                'url': self.url,}
+                
+
     race = db.relationship("Race", back_populates="circuit")
 
     def __repr__(self):
