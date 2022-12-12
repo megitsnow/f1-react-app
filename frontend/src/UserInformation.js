@@ -21,6 +21,7 @@ function UserInformation(props){
         lname = {userInformation.lname}
         email = {userInformation.email}
         password = {userInformation.password}
+        img = {userInformation.img}
         />
     )
 

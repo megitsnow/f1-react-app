@@ -241,25 +241,25 @@ def remove_from_session():
 
     return jsonify(out_of_session)
 
-# @app.route("/api/cloudinary")
-# def handle_cloudinary():
-#     """Handle cloudinary"""
-
-#     picture = request.json.get("my-file")
-#     user_email = session["user_email"]
-#     user = crud.get_user_by_email(user_email)
-#     user.img = picture
-
-#     return jsonify(user.to_dict())
+@app.route("/api/profile-photo", methods=["POST"])
+def cloudinary_photo():
+    """Get user information"""
+    user_email = session["user_email"]
+    profile_photo = request.json.get("profile_picture")
+    print("**********************CLOUDINARY")
+    print(f'{profile_photo}')
+    user = User.query.filter_by(email = user_email).first()
+    user.img = profile_photo
+    db.session.add(user)
+    db.session.commit()
+    return jsonify(user.to_dict())
 
 @app.route("/api/circuits")
 def circuit_data():
     """Circuit data"""
     circuits = Circuit.query.limit(10).all()
     print(circuits)
-    return jsonify({circuit.circuit_id: circuit.to_dict() for circuit in circuits})
-    
-
+    return jsonify({circuit.circuit_id: circuit.to_dict() for circuit in circuits})    
 
 if __name__ == "__main__":
     connect_to_db(app)

@@ -1,7 +1,6 @@
 import {React, useState} from 'react'
 
-function IndividualUserInformation(props) {
-    const { fname, lname, email, password} = props;
+function IndividualUserInformation({ fname, lname, email, password, img}) {
     const [isShown, setIsShown] = useState(false)
   
     function toggleShown(){
@@ -13,6 +12,7 @@ function IndividualUserInformation(props) {
         <div>
             <h3>{`Welcome Back, ${fname} ${lname}`}</h3>
             <p>{`Email: ${email}`}</p>
+            <img src = {img}/>
             <p>Password: {isShown && <span>{password}</span>}</p>
             <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Password</button>
         </div>

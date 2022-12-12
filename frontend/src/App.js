@@ -14,6 +14,7 @@ import UserProfile from './UserProfile.js';
 import HomePage from './HomePage.js';
 import Maps from './MapData.js';
 import Carousel from './Carousel.js'
+import CloudinaryWidget from './Cloudinary.js'
 
 
 function App() {
@@ -117,6 +118,7 @@ function App() {
         formData = {formData}/>}/>
         <Route exact path="/user-profile" element = {<Fragment>
           <UserInformation/>
+          <CloudinaryWidget/>
           <UserProfile/>
           </Fragment>
     }/>
