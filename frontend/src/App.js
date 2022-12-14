@@ -61,7 +61,6 @@ function App() {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            alert(responseJson.status);
             });
     }
 
@@ -91,9 +90,11 @@ function App() {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            alert(responseJson.status);
+            window.location.href = "/"
             });
-    }
+    }   
+
+    
 
   return (
     <BrowserRouter>

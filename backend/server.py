@@ -195,7 +195,7 @@ def active_driver_data():
 @app.route("/api/recent-news")
 def get_recent_articles():
     """Get recent articles"""
-    url =f'https://newsapi.org/v2/everything?q=F1 Racing&from=2022-11-12&sortBy=popularity&apiKey={API_KEY}'
+    url =f'https://newsapi.org/v2/everything?q=F1 Racing&from=2022-12-01&sortBy=popularity&apiKey={API_KEY}'
 
     response = requests.get(url)
     data = response.json()
@@ -245,13 +245,15 @@ def remove_from_session():
 def cloudinary_photo():
     """Get user information"""
     user_email = session["user_email"]
+    print(request)
     profile_photo = request.json.get("profile_picture")
+    user = User.query.filter_by(email = user_email).first()
     print("**********************CLOUDINARY")
     print(f'{profile_photo}')
-    user = User.query.filter_by(email = user_email).first()
-    user.img = profile_photo
-    db.session.add(user)
-    db.session.commit()
+    if profile_photo != None:
+        user.img = profile_photo
+        db.session.flush()
+        db.session.commit()
     return jsonify(user.to_dict())
 
 @app.route("/api/circuits")

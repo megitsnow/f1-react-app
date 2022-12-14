@@ -26,7 +26,6 @@ function DriverCard(props) {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            alert(responseJson.status);
             });
     }
 

@@ -17,7 +17,7 @@ function CloudinaryWidget() {
 
     useEffect(() => {
         console.log(images)
-        if (images !== {}) {
+        
             fetch('/api/profile-photo', {
                 method: 'POST',
                 body: JSON.stringify(images),
@@ -27,9 +27,7 @@ function CloudinaryWidget() {
             })
                 .then((response) => response.json())
                 .then((responseJson) => {
-                alert(responseJson.status);
                 });
-        }
         }, [images]);
 
     function failureCallBack(result){

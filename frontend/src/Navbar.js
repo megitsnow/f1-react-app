@@ -2,7 +2,13 @@ import {React, Fragment, useState, useEffect} from 'react';
 import { Link, Navigate} from 'react-router-dom';
 
 function NavBar({inSession}) {
+    const [isShown, setIsShown] = useState(false)
 
+    function toggleShown(){
+        setIsShown(prevShown => !prevShown)
+        console.log(isShown)
+    }
+    
     function logOut() {
 
         const loggedOut = {
@@ -18,9 +24,10 @@ function NavBar({inSession}) {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            alert(responseJson.status);
+            console.log("I got here")
+            window.location.href = "/"
             });
-
+        
     }
 
     if (inSession == true) {
@@ -31,7 +38,8 @@ function NavBar({inSession}) {
             <li><Link to = "/constructors">Constructors</Link></li>
             <li><Link to = "/recent-news">Recent News</Link></li>
             <li><Link to = "/user-profile">User Profile</Link></li>
-            <li onClick = {logOut}><Link to = "/">Log Out</Link></li>
+            <li onClick = {() => {logOut();
+            toggleShown();}}><Link to = "/">Log Out</Link></li>
         </ul>
         )
     }
