@@ -36,6 +36,7 @@ function NavBar({inSession}) {
             <li><Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link></li>
             <li><Link to = "/drivers">Drivers</Link></li>
             <li><Link to = "/constructors">Constructors</Link></li>
+            <li><Link to = "/circuits">Circuits</Link></li>
             <li><Link to = "/recent-news">Recent News</Link></li>
             <li><Link to = "/user-profile">User Profile</Link></li>
             <li onClick = {() => {logOut();

@@ -21,6 +21,11 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
+def get_user_by_id(id):
+    """Return a user by email."""
+
+    return User.query.filter(User.user_id == id).first()
+
 # def verify_user_in_session(email):
 #     """Return a user by email."""
 

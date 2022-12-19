@@ -17,7 +17,6 @@ function CloudinaryWidget() {
 
     useEffect(() => {
         console.log(images)
-        
             fetch('/api/profile-photo', {
                 method: 'POST',
                 body: JSON.stringify(images),

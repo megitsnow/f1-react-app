@@ -7,29 +7,34 @@ const containerStyle = {
   height: '400px'
 };
 
-function MapComponent({ name, lat, lng}) {
+function MapComponent({ name, lat, lng, location, country, url}) {
 
   const floatLat = parseFloat(lat)
   const floatLng = parseFloat(lng)
 
   const center = {
-    lat: floatLat,
+    lat: floatLat, 
     lng: floatLng
   };
 
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyDEpkgWXPnqdTh-v73cqDr8uD7KCA2T6_I"
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
+    <div>
+      <LoadScript
+        googleMapsApiKey="AIzaSyDXMZZxcLg1XfNZkQCrAVnfa2EOzkxlCw4"
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-    </LoadScript>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+        >
+          { /* Child components, such as markers, info windows, etc. */ }
+          <></>
+        </GoogleMap>
+      </LoadScript>
+      <h2>{name}</h2>
+      <h3>{location}, {country}</h3>
+      <a href = {url} target= "_blank"> Learn more about {name}</a>
+    </div>
   )
 }
 

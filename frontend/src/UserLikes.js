@@ -23,6 +23,7 @@ function UserLikes(props){
     const likesDriverCards = []
 
     for (const item of Object.values(likes)) {
+        console.log(item.shared_likes)
         const likeCard = (
             <LikeDriverCard 
             key={`${item.id}${count}`}
@@ -30,6 +31,7 @@ function UserLikes(props){
             img={item.img}
             nationality={item.nationality}
             id={item.id}
+            shared_likes = {item.shared_likes}
         />
         );
         count++

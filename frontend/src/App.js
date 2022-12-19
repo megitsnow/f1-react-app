@@ -102,7 +102,6 @@ function App() {
       <Routes>
       <Route exact path="/" element = {<Fragment>
         <HomePage/>
-        <Maps/>
         <Carousel/>
         </Fragment>}/>
         <Route exact path="/constructors" element = {<Constructors/>}/>
@@ -110,6 +109,7 @@ function App() {
         <Route exact path="/drivers" element = {<Drivers/>}/>
         <Route path="/drivers/:driverId" element = {<DriverDetails/>}/>
         <Route exact path="/recent-news" element = {<RecentNews/>}/>
+        <Route exact path="/circuits" element = {<Maps/>}/>
         <Route exact path="/log-in" element = {<LogIn handleChange = {handleChange}
         handleSubmit = {handleSubmit}
         logInData = {logInData}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function IndividualConstructorCard(props) {
-    const { img, name, nationality, wiki_url} = props;
+    const { name, nationality, wiki_url} = props;
     return (
         <div>
             <h3>{name}</h3>

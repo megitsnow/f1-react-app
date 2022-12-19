@@ -15,6 +15,7 @@ function DriverDetails(props) {
         .then((response) => response.json())
         .then((driverData) => {
         setDriverInfo(driverData);
+        console.log(driverInfo[1]['img_url'])
         });
     }, []);
 
@@ -36,6 +37,9 @@ function DriverDetails(props) {
 
     return (
         <div>
+            {/* <div>
+                <img src = {driverInfo[1]['img_url']}/>
+            </div> */}
             <table>
             <thead>
                 <tr>

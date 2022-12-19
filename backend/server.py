@@ -89,8 +89,48 @@ def constructor_logos():
 def constructor_indiv_info(constructor_id):
     """Get individual constructor information"""
     print(constructor_id)
-    constructor = crud.get_constructor_by_id(constructor_id)
-    return jsonify(constructor.to_dict())  
+
+    constructor_race_results = (
+    db.session.query(Race.race_id, Constructor.name, Constructor.nationality, Constructor.url, Race.name, Result.points, Result.position, Constructor.img)
+    .join(Result, Result.race_id == Race.race_id)
+    .join(Constructor, Constructor.constructor_id == Result.constructor_id)
+    .filter(Constructor.constructor_id == constructor_id).all()
+    )
+
+# similar_likes = (
+# db.session.query(User.fname, User.lname, Like.driver_id, User.user_id)
+# .join(User, User.user_id == Like.user_id)
+# .join(Driver, Driver.driver_id == Like.driver_id)
+# .filter(Driver.driver_id == 1)
+# )
+
+
+    race_results = {}
+
+    for i, value in enumerate(constructor_race_results):
+        list_items = list(value)
+        for i, item in enumerate(list_items):
+            race = {}
+            race_id = str(list_items[0])
+            if i == 0: 
+                race_results[race_id] = {}
+            elif i == 1:
+                race_results[race_id]['name'] = item
+            elif i == 2:
+                race_results[race_id]['nationality'] = item
+            elif i == 3:
+                race_results[race_id]['url'] = item
+            elif i == 4:
+                race_results[race_id]['race_name'] = item
+            elif i == 5:
+                race_results[race_id]['points'] = item
+            elif i == 6:
+                race_results[race_id]['position'] = item
+            elif i == 7:
+                race_results[race_id]['img'] = item
+            
+
+    return jsonify(race_results)   
 
 # Driver routes. To include route for each individual driver like we have for the constructors
 
@@ -139,13 +179,20 @@ def create_user_like():
     logged_in_email = session.get("user_email")
     print(f"LINE 128 {driver_id}")
     print(logged_in_email)
-
     user = crud.get_user_by_email(logged_in_email)
-    like = crud.create_like(user.user_id, driver_id)
-    db.session.add(like)
-    db.session.commit()
+    id = user.user_id
 
-    return jsonify(like.to_dict())
+    similar_like = Like.query.filter(Like.user_id == id).filter(Like.driver_id == driver_id).all()
+
+    if similar_like == []:
+        like = crud.create_like(user.user_id, driver_id)
+        db.session.add(like)
+        db.session.commit()
+        return jsonify(like.to_dict())
+    
+    return(user.to_dict())
+
+# similar_like = Like.query.filter(Like.driver_id ==1).all()
 
 @app.route("/api/user-like")
 def render_user_likes():
@@ -154,15 +201,46 @@ def render_user_likes():
     logged_in_email = session.get("user_email")
 
     user = crud.get_user_by_email(logged_in_email)
-    likes_by_user = Like.query.filter_by(user_id = user.user_id).all()
+    user_id = user.user_id
     
     driver_info_per_like = (
     db.session.query(Like.like_id, Driver.forename, Driver.surname, Driver.img_url, Driver.nationality, Driver.driver_id)
     .join(Like, Like.driver_id == Driver.driver_id)
-    .filter(Like.user_id == '1').all()
+    .filter(Like.user_id == user_id).all()
     )
     
     user_likes = {}
+    driver_ids = []
+    shared_user_likes = {}
+    likes_to_dict = {}
+    users = {}
+
+
+    for i, value in enumerate(driver_info_per_like):
+        list_items = list(value)
+        for i, item in enumerate(list_items):
+            if i == 5:
+                driver_ids.append(item)
+    
+    for id in driver_ids:
+        similar_like = Like.query.filter(Like.driver_id ==id).all()
+        driver_id = str(id)
+        user_ids = []
+        print(user_ids)
+        for like in similar_like:
+            new_like = like.to_dict()
+            user_id = like.user_id
+            user = crud.get_user_by_id(user_id)
+            first_name = user.fname
+            print("*****FIRSTNAME****")
+            print(first_name)
+            user_ids.append(first_name)
+            print(user_ids)
+            if likes_to_dict.get(driver_id,0) == 0:
+                likes_to_dict[driver_id] = [first_name]
+            else:
+                likes_to_dict[driver_id].append(first_name)
+
 
     for i, value in enumerate(driver_info_per_like):
         list_items = list(value)
@@ -181,6 +259,12 @@ def render_user_likes():
                 user_likes[like_id]['nationality'] = item
             elif i == 5:
                 user_likes[like_id]['id'] = item
+                shared_likes = likes_to_dict.get(str(item), 0) 
+                if shared_likes != 0:
+                    user_likes[like_id]['shared_likes'] = shared_likes
+    print("**** USER LIKES *******")
+    print(user_likes)
+
 
     return jsonify(user_likes)
 
@@ -259,7 +343,7 @@ def cloudinary_photo():
 @app.route("/api/circuits")
 def circuit_data():
     """Circuit data"""
-    circuits = Circuit.query.limit(10).all()
+    circuits = Circuit.query.all()
     print(circuits)
     return jsonify({circuit.circuit_id: circuit.to_dict() for circuit in circuits})    
 

@@ -24,6 +24,9 @@ function Maps(props) {
           name = {map.name}
           lat = {map.lat}
           lng = {map.lng}
+          location = {map.location}
+          country = {map.country}
+          url = {map.url}
         />
       );
   
