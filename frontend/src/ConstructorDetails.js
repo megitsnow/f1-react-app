@@ -2,6 +2,7 @@ import IndividualConstructorCard from './IndividualConstructorCard.js';
 import ConstructorResultCard from './ConstructorResultCard.js';
 import {React, useEffect, useState, Fragment} from 'react';
 import { useParams } from 'react-router-dom'
+import './Style.css';
 
 function ConstructorDetails(props) {
     const params = useParams()

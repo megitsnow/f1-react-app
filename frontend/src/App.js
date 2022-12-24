@@ -1,5 +1,6 @@
 import { React, useState, useEffect, Fragment} from 'react';
 import { Link, BrowserRouter, Route, Navigate, Routes } from 'react-router-dom';
+import './Style.css';
 
 import NavBar from './Navbar.js';
 import Constructors from './Constructor.js';
@@ -15,6 +16,7 @@ import HomePage from './HomePage.js';
 import Maps from './MapData.js';
 import Carousel from './Carousel.js'
 import CloudinaryWidget from './Cloudinary.js'
+import SimilarLikes from './SimilarLikes.js'
 
 
 function App() {
@@ -101,7 +103,6 @@ function App() {
       <NavBar inSession = {inSession}/>
       <Routes>
       <Route exact path="/" element = {<Fragment>
-        <HomePage/>
         <Carousel/>
         </Fragment>}/>
         <Route exact path="/constructors" element = {<Constructors/>}/>
@@ -117,7 +118,7 @@ function App() {
         <Route exact path="/sign-up" element = {<SignUpForm handleSignUpChange = {handleSignUpChange}
         handleSignUpSubmit = {handleSignUpSubmit}
         formData = {formData}/>}/>
-        <Route exact path="/user-profile" element = {<Fragment>
+        <Route exact path="/user-profile" element = {<Fragment className = "profilePage">
           <UserInformation/>
           <CloudinaryWidget/>
           <UserProfile/>

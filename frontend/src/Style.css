@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+body, html {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 400;
+    cursor: pointer;
+    color: #a9a9a9;
+    margin: 2px;
+}
+
+.bg {
+    background-image: url('./images/background.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+.sign-up {
+    background-image: url('./images/SignUp.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: vertical;
+    background-color: #FAF9F6; opacity: 0.8;
+    width: 25%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+
+.input-fields {
+    padding: 3px;
+    margin: 5px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.nav-bar-logged-out {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+}
+
+.nav-bar-logged-in {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+}
+
+.nav-link {
+    margin: 5px;
+    border: none;
+    color: black;
+}
+
+.nav-bar-end {
+    margin-left: auto;
+}
+
+button.input-fields {
+    padding: 3px 6px;
+}
+
+.driverImage {
+    width: 25%;
+    height: 25%;
+    margin-bottom: 0px;
+}
+
+.driver-surname {
+    font-size: 600;
+    margin-top: 0px;
+}
+
+.driver-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.driver-card-info {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.nationality {
+    margin-top: 0px;
+    font-style: italic;
+}
+
+.driver-surname {
+    margin-bottom: 0px;
+}
+
+td, th {
+    border: 1px solid #777;
+    padding: 0.5rem;
+    text-align: center;
+}
+ 
+table {
+    border-collapse: collapse;
+}
+ 
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+caption {
+    font-size: 0.8rem;
+}
+
+.profile-photo {
+    width: 20%;
+    height: 20%;
+}
+
+.profilePage {
+    display: flex;
+}
+
+.newsCard {
+    width: 30%;
+    height: 30%;
+}
+
+.newsCard img {
+    width: 100%
+}

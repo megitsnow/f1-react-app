@@ -1,4 +1,5 @@
 import {React, useState} from 'react'
+import './Style.css';
 
 function IndividualUserInformation({ fname, lname, email, password, img}) {
     const [isShown, setIsShown] = useState(false)
@@ -10,11 +11,12 @@ function IndividualUserInformation({ fname, lname, email, password, img}) {
 
     return (
         <div>
-            <h3>{`Welcome Back, ${fname} ${lname}`}</h3>
+            <p>{`Welcome Back, ${fname} ${lname}`}</p>
             <p>{`Email: ${email}`}</p>
-            <img src = {img}/>
             <p>Password: {isShown && <span>{password}</span>}</p>
             <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Password</button>
+            <br></br>
+            <img src = {img} className = "profile-photo"/>
         </div>
 
     );

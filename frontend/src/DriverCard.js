@@ -3,6 +3,7 @@ import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import Favorite from '@material-ui/icons/Favorite';
+import './Style.css';
 
 
 
@@ -26,16 +27,23 @@ function DriverCard(props) {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            });
+            }); 
     }
 
     return (
-        <div>
-            <Link to={`/drivers/${id}`}><img src = {img}/></Link>
-            <h2>{surname}</h2>
-            <h1>{nationality}</h1>
-            {liked ? <Favorite onClick = {addToLikes}/> : <FavoriteBorder onClick = {addToLikes}/>}
-            {/* <img src = {Favorite} onClick = {addToLikes}></img> */}
+        <div className="driver-card">
+            <div>
+                <Link to={`/drivers/${id}`}><img src = {img} className = "driverImage"/></Link>
+            </div>
+            <div className="driver-card-info">
+                <div>
+                    <h2 className = "driver-surname">{surname}</h2>
+                    <h3 className = "nationality">{nationality}</h3>
+                </div>
+                <div>
+                        {liked ? <Favorite onClick = {addToLikes}/> : <FavoriteBorder onClick = {addToLikes}/>}
+                </div>
+            </div>
         </div>
 
     );

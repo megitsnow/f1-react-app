@@ -1,4 +1,5 @@
 import React from 'react';
+import './Style.css';
 
 function ConstructorResultCard(props) {
     const { points, position, race_name} = props;

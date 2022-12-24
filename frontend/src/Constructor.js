@@ -1,5 +1,6 @@
 import ConstructorCard from './ConstructorCard.js';
 import {React, useState, useEffect} from 'react';
+import './Style.css';
 
 function Constructors(props){
     const [constructorData, setConstructorData] = useState({});

@@ -347,6 +347,41 @@ def circuit_data():
     print(circuits)
     return jsonify({circuit.circuit_id: circuit.to_dict() for circuit in circuits})    
 
+@app.route("/api/similar-likes")
+def similar_users():
+    """Return users that have similar likes to the user"""
+
+    logged_in_email = session.get("user_email")
+
+    user = crud.get_user_by_email(logged_in_email)
+    user_id = user.user_id
+    
+    user_info_per_driver_like = (
+    db.session.query(Like.user_id, Driver.driver_id)
+    .join(Like, Like.driver_id == Driver.driver_id)
+    .filter(Like.user_id == 1).all()
+    )
+    
+    driver_ids = []
+    users = {}
+
+    for i, value in enumerate(user_info_per_driver_like):
+        list_items = list(value)
+        for i, item in enumerate(list_items):
+            if i == 1:
+                driver_ids.append(item)
+    
+    for id in driver_ids:
+        similar_like = Like.query.filter(Like.driver_id == id).all()
+        for like in similar_like:
+            user_id = like.user_id
+            user = crud.get_user_by_id(user_id)
+            first_name = user.fname
+            users['id'] = user_id
+            users['first_name'] = first_name
+
+    return jsonify(users)
+
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", debug=True)

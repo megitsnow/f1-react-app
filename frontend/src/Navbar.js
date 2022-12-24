@@ -1,5 +1,6 @@
 import {React, Fragment, useState, useEffect} from 'react';
 import { Link, Navigate} from 'react-router-dom';
+import './Style.css';
 
 function NavBar({inSession}) {
     const [isShown, setIsShown] = useState(false)
@@ -32,26 +33,32 @@ function NavBar({inSession}) {
 
     if (inSession == true) {
         return (
-            <ul>
-            <li><Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link></li>
-            <li><Link to = "/drivers">Drivers</Link></li>
-            <li><Link to = "/constructors">Constructors</Link></li>
-            <li><Link to = "/circuits">Circuits</Link></li>
-            <li><Link to = "/recent-news">Recent News</Link></li>
-            <li><Link to = "/user-profile">User Profile</Link></li>
-            <li onClick = {() => {logOut();
-            toggleShown();}}><Link to = "/">Log Out</Link></li>
-        </ul>
+            <nav>
+                <div className = "nav-bar-logged-in">
+                        <Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link>
+                        <Link to = "/drivers" className = "nav-link">Drivers</Link>
+                        <Link to = "/constructors" className = "nav-link">Constructors</Link>
+                        <Link to = "/circuits" className = "nav-link">Circuits</Link>
+                        <Link to = "/recent-news" className = "nav-link">Recent News</Link>
+                 
+                    <div className = "nav-bar-end">
+                    <Link to = "/user-profile" className = "nav-link">User Profile</Link>
+                    <Link to = "/" className = "nav-link" onClick = {() => {logOut();
+                        toggleShown();}}>Log Out</Link>
+                    </div>
+                </div>
+            </nav>
+        
         )
     }
     else {
         return (
             <nav>
-            <section className = "nav-bar">
-                <ul>
-                    <li><Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link></li>
-                    <li><Link to = "/log-in">Log In</Link></li>
-                </ul>
+            <section className = "nav-bar-logged-out">
+                
+                    <Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link>
+                    <Link to = "/log-in">Log In</Link>
+        
             </section>
             </nav>
             );
