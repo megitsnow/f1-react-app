@@ -31,21 +31,22 @@ function DriverCard(props) {
     }
 
     return (
-        <div className="driver-card">
-            <div>
-                <Link to={`/drivers/${id}`}><img src = {img} className = "driverImage"/></Link>
-            </div>
-            <div className="driver-card-info">
+        <div>
+            <div className="driver-card">
                 <div>
-                    <h2 className = "driver-surname">{surname}</h2>
-                    <h3 className = "nationality">{nationality}</h3>
+                    <Link to={`/drivers/${id}`}><img src = {img} className = "driverImage"/></Link>
                 </div>
-                <div>
-                        {liked ? <Favorite onClick = {addToLikes}/> : <FavoriteBorder onClick = {addToLikes}/>}
+                <div className="driver-card-info">
+                    <div>
+                        <h2 className = "driver-surname">{surname}</h2>
+                        <h3 className = "nationality">{nationality}</h3>
+                    </div>
+                    <div>
+                            {liked ? <Favorite onClick = {addToLikes}/> : <FavoriteBorder onClick = {addToLikes}/>}
+                    </div>
                 </div>
             </div>
         </div>
-
     );
 }
 

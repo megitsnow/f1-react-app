@@ -1,25 +1,29 @@
-import NewsCard from './NewsCard.js';
 import {React, useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
+import NewsCard from './NewsCard.js';
 
-function RecentNews(props){
-
+function DriverNewsById(props) {
+    const params = useParams()
     const [recentNewsData, setRecentNewsData] = useState([]);
-    
+    const driverId = params.driverId
+    let count = 25000000
+
+    const url = `/api/recent-news/${driverId}`;
+
     useEffect(() => {
-        fetch('/api/recent-news')
-            .then((response) => response.json())
-            .then((recentNewsData) => {
-            setRecentNewsData(recentNewsData);
-            });
-        }, []);
-        
+    fetch(url)
+        .then((response) => response.json())
+        .then((driverData) => {
+        setRecentNewsData(driverData);
+        });
+    }, []);
+
     const newsCards = [];
-    let count = 0
 
     for (const article of Object.values(recentNewsData)) {
         const newsCard = (
             <NewsCard
-            key={`article${count}`}
+            key={`article${count}{description}`}
             description = {article.description}
             title = {article.title}
             url = {article.url}
@@ -29,12 +33,13 @@ function RecentNews(props){
         count++
         newsCards.push(newsCard);
     }
+
+
     return (
         <div className = "newsGrid">
             {newsCards}
         </div>
-        
-    );
-}
+        );
+    }
 
-export default RecentNews;
+export default DriverNewsById;

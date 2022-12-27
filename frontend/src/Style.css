@@ -49,13 +49,13 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2px;
+    margin: 5px;
 }
 
 .nav-bar-logged-in {
     display: flex;
     align-items: center;
-    margin: 2px;
+    margin: 5px 10px;
 }
 
 .nav-link {
@@ -73,8 +73,8 @@ button.input-fields {
 }
 
 .driverImage {
-    width: 25%;
-    height: 25%;
+    width: 300px;
+    height: 300px;
     margin-bottom: 0px;
 }
 
@@ -86,20 +86,24 @@ button.input-fields {
 .driver-card {
     display: flex;
     flex-direction: column;
+    margin: 5px;
+    border: 2px solid #E0E0E0;
+    border-radius: 2px;
 }
 
 .driver-card-info {
     display: flex;
-    width: 25%;
+    width: 300px;
     justify-content: space-between;
 }
 
-.nationality {
+.nationality, .countryLocation {
     margin-top: 0px;
     font-style: italic;
+    margin-bottom: 0px;
 }
 
-.driver-surname {
+.driver-surname, .countryName {
     margin-bottom: 0px;
 }
 
@@ -130,10 +134,54 @@ caption {
 }
 
 .newsCard {
-    width: 30%;
-    height: 30%;
+    width: 300px;
+    margin: 5px;
+    border: 2px solid #E0E0E0;
+    border-radius: 2px;
+    text-align: center;
 }
 
 .newsCard img {
+    width: 100%;
+}
+
+.newsPage {
+    display: grid;
+}
+
+.liked-driver-card{
+    width: 25%;
+    height: 25%;
+}
+
+.liked-driver-card img {
     width: 100%
 }
+
+.driverGrid, .newsGrid, .constructorGrid, .mapsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.constructor-logo {
+    width: 250px;
+    height: 200px;
+    margin: 5px;
+    text-align: center;
+}
+
+.constructor-logo-img {
+    width: 100%;
+    height: 50%;   
+}
+
+.mapsDiv {
+    width: 300px;
+    height: 500px;
+    border: 2px solid #E0E0E0;
+    border-radius: 2px;
+    margin: 5px;
+}
+

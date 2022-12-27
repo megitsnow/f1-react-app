@@ -97,14 +97,6 @@ def constructor_indiv_info(constructor_id):
     .filter(Constructor.constructor_id == constructor_id).all()
     )
 
-# similar_likes = (
-# db.session.query(User.fname, User.lname, Like.driver_id, User.user_id)
-# .join(User, User.user_id == Like.user_id)
-# .join(Driver, Driver.driver_id == Like.driver_id)
-# .filter(Driver.driver_id == 1)
-# )
-
-
     race_results = {}
 
     for i, value in enumerate(constructor_race_results):
@@ -279,7 +271,7 @@ def active_driver_data():
 @app.route("/api/recent-news")
 def get_recent_articles():
     """Get recent articles"""
-    url =f'https://newsapi.org/v2/everything?q=F1 Racing&from=2022-12-01&sortBy=popularity&apiKey={API_KEY}'
+    url =f'https://newsapi.org/v2/everything?q=Formula One Racing&from=2022-12-25&sortBy=popularity&apiKey={API_KEY}'
 
     response = requests.get(url)
     data = response.json()
@@ -381,6 +373,68 @@ def similar_users():
             users['first_name'] = first_name
 
     return jsonify(users)
+
+@app.route("/api/recent-news/driver-likes")
+def news_for_driver():
+    """Get individual driver news information"""
+    logged_in_email = session.get("user_email")
+
+    user = crud.get_user_by_email(logged_in_email)
+    user_id = user.user_id
+    
+    driver_info_per_like = (
+    db.session.query(Like.like_id, Driver.forename, Driver.surname, Driver.img_url, Driver.nationality, Driver.driver_id)
+    .join(Like, Like.driver_id == Driver.driver_id)
+    .filter(Like.user_id == user_id).all()
+    )
+    
+    user_likes = {}
+
+    for i, value in enumerate(driver_info_per_like):
+        list_items = list(value)
+        for i, item in enumerate(list_items):
+            like_id = str(list_items[0])
+            if i == 0: 
+                user_likes[like_id] = {}
+            elif i == 1:
+                user_likes[like_id]['fname'] = item
+            elif i == 2:
+                user_likes[like_id]['lname'] = item
+            elif i == 5:
+                user_likes[like_id]['id'] = item
+
+    return jsonify(user_likes)  
+
+@app.route("/api/recent-news/<driver_id>")
+def driver_indiv_news(driver_id):
+    """Get individual driver information"""
+
+    driver = crud.get_driver_by_id(driver_id)
+    fname = driver.forename
+    lname = driver.surname
+    fullname = f'{fname} {lname} Driver'
+    print(fullname)
+    print("*********FULLNAME")
+    
+    url =f'https://newsapi.org/v2/everything?q={fullname}&from=2022-12-25&sortBy=popularity&apiKey={API_KEY}'
+
+    response = requests.get(url)
+    data = response.json()
+    news_list = data['articles']
+    print(data)
+
+    news_articles = []
+
+    for i in range(len(news_list)):
+        article= {
+        "title": data['articles'][i]['title'],
+        "description": data['articles'][i]['description'],
+        "url": data['articles'][i]['url'],
+        "url_to_img": data['articles'][i]['urlToImage']
+        }
+        news_articles.append(article)
+
+    return jsonify(news_articles)  
 
 if __name__ == "__main__":
     connect_to_db(app)

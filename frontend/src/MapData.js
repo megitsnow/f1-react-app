@@ -33,7 +33,7 @@ function Maps(props) {
       googleMapInfo.push(mapInformation);
     }
     return (
-        <div>
+        <div className = "mapsGrid">
             {googleMapInfo}
         </div>
         

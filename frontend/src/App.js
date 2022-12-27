@@ -17,6 +17,8 @@ import Maps from './MapData.js';
 import Carousel from './Carousel.js'
 import CloudinaryWidget from './Cloudinary.js'
 import SimilarLikes from './SimilarLikes.js'
+import DriverNews from './DriverNews.js'
+import DriverNewsById from './DriverNewsById.js'
 
 
 function App() {
@@ -63,6 +65,7 @@ function App() {
         })
             .then((response) => response.json())
             .then((responseJson) => {
+            window.location.href = "/"
             });
     }
 
@@ -109,7 +112,11 @@ function App() {
         <Route path="/constructors/:constructorId" element = {<ConstructorDetails/>}/>
         <Route exact path="/drivers" element = {<Drivers/>}/>
         <Route path="/drivers/:driverId" element = {<DriverDetails/>}/>
-        <Route exact path="/recent-news" element = {<RecentNews/>}/>
+        <Route path="/recent-news/:driverId" element = {<DriverNewsById/>}/>
+        <Route exact path="/recent-news" element = {<Fragment>
+            <DriverNews/>
+            <RecentNews/>
+            </Fragment>}/>
         <Route exact path="/circuits" element = {<Maps/>}/>
         <Route exact path="/log-in" element = {<LogIn handleChange = {handleChange}
         handleSubmit = {handleSubmit}

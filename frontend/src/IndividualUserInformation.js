@@ -11,9 +11,9 @@ function IndividualUserInformation({ fname, lname, email, password, img}) {
 
     return (
         <div>
-            <p>{`Welcome Back, ${fname} ${lname}`}</p>
-            <p>{`Email: ${email}`}</p>
-            <p>Password: {isShown && <span>{password}</span>}</p>
+            <h2>{`Welcome Back, ${fname} ${lname}`}</h2>
+            <h3>{`Email: ${email}`}</h3>
+            <h3>Password: {isShown && <span>{password}</span>}</h3>
             <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Password</button>
             <br></br>
             <img src = {img} className = "profile-photo"/>

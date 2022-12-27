@@ -3,8 +3,8 @@ import {React, useState, useEffect} from 'react';
 
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '300px',
+  height: '300px'
 };
 
 function MapComponent({ name, lat, lng, location, country, url}) {
@@ -19,21 +19,23 @@ function MapComponent({ name, lat, lng, location, country, url}) {
 
   return (
     <div>
-      <LoadScript
-        googleMapsApiKey="AIzaSyDXMZZxcLg1XfNZkQCrAVnfa2EOzkxlCw4"
-      >
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
+      <div className = "mapsDiv">
+        <LoadScript
+          googleMapsApiKey="AIzaSyDXMZZxcLg1XfNZkQCrAVnfa2EOzkxlCw4"
         >
-          { /* Child components, such as markers, info windows, etc. */ }
-          <></>
-        </GoogleMap>
-      </LoadScript>
-      <h2>{name}</h2>
-      <h3>{location}, {country}</h3>
-      <a href = {url} target= "_blank"> Learn more about {name}</a>
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={10}
+          >
+            { /* Child components, such as markers, info windows, etc. */ }
+            <></>
+          </GoogleMap>
+        </LoadScript>
+        <h2 className = "countryName">{name}</h2>
+        <h3 className = "countryLocation">{location}, {country}</h3>
+        <a href = {url} target= "_blank"> Learn more about {name}</a>
+      </div>
     </div>
   )
 }

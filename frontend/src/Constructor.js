@@ -27,7 +27,7 @@ function Constructors(props){
       constructorCards.push(constructorCard);
     }
     return (
-        <div>
+        <div className = "constructorGrid">
             {constructorCards}
         </div>
         

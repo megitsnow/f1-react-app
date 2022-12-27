@@ -29,7 +29,7 @@ function Drivers(props) {
       activeDriverCards.push(driverCard);
     }
     return (
-        <div>
+        <div className = "driverGrid">
             {activeDriverCards}
         </div>
         
