@@ -1,5 +1,6 @@
 import { useState, React, useEffect } from 'react';
 import { WidgetLoader, Widget } from 'react-cloudinary-upload-widget'
+import './Style.css';
 
 // cloudName: 'dzqtjox0u', 
 // uploadPreset: 'ewco2fnk',
@@ -37,7 +38,7 @@ function CloudinaryWidget() {
     return (
         <>
         <WidgetLoader /> 
-        <Widget
+        <Widget className = "cloudinary-widget"
           sources={['local', 'camera']} 
           resourceType={'image'} 
           cloudName={'dzqtjox0u'} 
@@ -49,7 +50,9 @@ function CloudinaryWidget() {
                 width: '200px',
                 backgroundColor: 'gray',
                 borderRadius: '4px',
-                height: '25px'
+                height: '25px',
+                padding: '2px 4px 2px 4px',
+                fontFamily: 'Titillium Web'
               }} 
           folder={'my_folder'} 
           cropping={false} 

@@ -6,10 +6,13 @@ import Ferrari from "./images/Ferrari.jpeg"
 import hamilton from "./images/hamilton.webp"
 import Monaco from "./images/Monaco.jpeg"
 import Drama from "./images/Drama.jpeg"
+import Unsplash from "./images/Unsplash1.jpg"
+import Unsplash2 from "./images/Unsplash2.jpg"
+import Unsplash3 from "./images/Unsplash4.jpg"
 
 export const images = [
-    {title: "Follow your favorite players and see all of their historical stats", img: hamilton},
-    {title: "Read about the history and performance of your favorite constructors", img: Ferrari},
-    {title: "Dream about traveling to exotic locations to a formula one circuit", img: Monaco},
-    {title: "Be informed of the latest drama and Formula One News", img: Drama}
+    {title: "Read About the History and Performance of Your Favorite Constructors", img: Unsplash2},
+    {title: "Follow your Favorite Drivers and See All of Their Historical Stats", img: Unsplash},
+    {title: "Dream About Traveling to Exotic Locations to a Formula One Circuit", img: Unsplash3},
+    {title: "Be Informed of the Latest Drama and Formula One News", img: Drama}
 ]

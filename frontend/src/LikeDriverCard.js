@@ -8,10 +8,14 @@ function LikeDriverCard(props) {
 
     return (
         <div className = "liked-driver-card">
+            <div>
             <Link to={`/drivers/${id}`}><img src = {img} className = "driverImage"/></Link>
+            </div>
+            <div>
             <h2 className = "driver-surname">{surname}</h2>
             <h3 className = "nationality">{nationality}</h3>
             <h3 className = "nationality">Other users that like {surname}: {common_user_likes}</h3>
+            </div>
         </div>
 
     );

@@ -436,6 +436,22 @@ def driver_indiv_news(driver_id):
 
     return jsonify(news_articles)  
 
+@app.route("/api/other-users")
+def other_users():
+    """Get information for other users"""
+    users = User.query.all()
+    return jsonify({user.user_id: user.to_dict() for user in users})   
+
+@app.route("/api/user-profile/<user_id>")
+def other_user_profiles(user_id):
+    """See other users profiles"""
+    user_id = user_id
+    print(user_id)
+    user = User.query.filter_by(user_id = user_id).first()
+    print(user)
+    print("******USER**********")
+    return jsonify(user.to_dict())
+
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", debug=True)

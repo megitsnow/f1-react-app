@@ -15,13 +15,17 @@ function DriverDetails(props) {
         .then((response) => response.json())
         .then((driverData) => {
         setDriverInfo(driverData);
-        console.log(driverInfo[1]['img_url'])
         });
     }, []);
 
     const resultsDriverCards = []
+    const driverImage = []
 
     for (const driver of Object.values(driverInfo)) {
+        if (driverImage.length == 0) {
+            driverImage.push(driver.img_url)
+        }
+
         const resultCard = (
           <DriverResultCard
             key={`${driver.race_name}${driver.fname}${count}`}
@@ -36,10 +40,10 @@ function DriverDetails(props) {
 
 
     return (
-        <div>
-            {/* <div>
-                <img src = {driverInfo[1]['img_url']}/>
-            </div> */}
+        <div className = "driver-card-page">
+            <div>
+                <img src = {driverImage}/>
+            </div>
             <table>
             <thead>
                 <tr>

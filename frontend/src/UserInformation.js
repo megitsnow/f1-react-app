@@ -1,5 +1,6 @@
 import IndividualUserInformation from './IndividualUserInformation.js';
 import {React, useState, useEffect} from 'react';
+import './Style.css';
 
 function UserInformation(props){
     const [userInformation, setUserInformation] = useState({});
@@ -27,7 +28,7 @@ function UserInformation(props){
 
 
     return(
-        <div>
+        <div className = "individual-profile-information">
             {individualInformation}
         </div>
     

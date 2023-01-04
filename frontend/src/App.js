@@ -19,6 +19,9 @@ import CloudinaryWidget from './Cloudinary.js'
 import SimilarLikes from './SimilarLikes.js'
 import DriverNews from './DriverNews.js'
 import DriverNewsById from './DriverNewsById.js'
+import UserList from './UserList.js'
+import UserProfileById from './UserProfileById.js'
+
 
 
 function App() {
@@ -102,6 +105,7 @@ function App() {
     
 
   return (
+    <div className = "darkMode">
     <BrowserRouter>
       <NavBar inSession = {inSession}/>
       <Routes>
@@ -113,10 +117,11 @@ function App() {
         <Route exact path="/drivers" element = {<Drivers/>}/>
         <Route path="/drivers/:driverId" element = {<DriverDetails/>}/>
         <Route path="/recent-news/:driverId" element = {<DriverNewsById/>}/>
-        <Route exact path="/recent-news" element = {<Fragment>
+        <Route path="/user-Profile/:userId" element = {<UserProfileById/>}/>
+        <Route exact path="/recent-news" element = {<div className = "recent-news">
             <DriverNews/>
             <RecentNews/>
-            </Fragment>}/>
+            </div>}/>
         <Route exact path="/circuits" element = {<Maps/>}/>
         <Route exact path="/log-in" element = {<LogIn handleChange = {handleChange}
         handleSubmit = {handleSubmit}
@@ -125,15 +130,20 @@ function App() {
         <Route exact path="/sign-up" element = {<SignUpForm handleSignUpChange = {handleSignUpChange}
         handleSignUpSubmit = {handleSignUpSubmit}
         formData = {formData}/>}/>
-        <Route exact path="/user-profile" element = {<Fragment className = "profilePage">
-          <UserInformation/>
-          <CloudinaryWidget/>
-          <UserProfile/>
-          </Fragment>
+        <Route exact path="/user-profile" element = {<div className = "profilePage">
+            <div className = "user-profile">
+                    <div className = "user-information-tab">
+                    <UserInformation/>
+                    <CloudinaryWidget/>
+                    </div>
+                    <UserProfile/>
+                    </div>
+        </div>
     }/>
       </Routes>
     
     </BrowserRouter>
+    </div>
     );
     };
 

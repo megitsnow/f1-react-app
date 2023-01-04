@@ -3,9 +3,9 @@ import React from 'react'
 
 function UserProfile(props) {
     return (
-        <div>
-            < UserLikes/>
-        </div>
+            <div>
+                < UserLikes/>
+            </div>
     );
 }
 

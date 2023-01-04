@@ -22,8 +22,13 @@ function ConstructorDetails(props) {
         }, []);
 
         const resultsConstructorCards = []
+        const constructorImage = []
+
 
         for (const constructor of Object.values(constructorInfo)) {
+            if (constructorImage.length == 0) {
+                constructorImage.push(constructor.img)
+            }
             const resultCard = (
               <ConstructorResultCard
                 key={`${constructor.race_name}${constructor.name}${count}`}
@@ -37,24 +42,12 @@ function ConstructorDetails(props) {
             console.log(constructorInfo)
           }
 
-
-        //   const individualConstructorCard = (
-        //     <IndividualConstructorCard
-        //     name = {constructorInfo[1]['name']}
-        //     nationality = {constructorInfo[1]['nationality']}
-        //     wiki_url = {constructorInfo[1]['url']}
-        //     />
-        // );
-
-
     return (
-        <div>
-            {/* <div>
-                <img src = {constructorInfo[1]['img']}/>
-                <h1>{constructorInfo[1]['name']}</h1>
-                <h2>{constructorInfo[1]['nationality']}</h2>
-                <a href = {constructorInfo[1]['url']}/>
-            </div> */}
+        <div className = "driver-card-page">
+            <div>
+                <img src = {constructorImage}/>
+            </div>
+            <div>
                 <table>
                     <thead>
                         <tr>
@@ -65,6 +58,7 @@ function ConstructorDetails(props) {
                     </thead>
                 {resultsConstructorCards}
                 </table>
+            </div>
         </div>
     );
 }

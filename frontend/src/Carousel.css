@@ -3,6 +3,8 @@
     height: 600px;
     display: flex;
     margin-top: 5px;
+    padding-top: 20px;
+    padding-bottom: 150px;
 }
 
 .carouselInner {

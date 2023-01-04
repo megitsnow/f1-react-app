@@ -1,5 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import ListItem from './ListItem.js';
+import './Style.css';
 
 function DriverNews(props) {
     const [driverInfo, setDriverInfo] = useState({});
@@ -28,7 +29,7 @@ function DriverNews(props) {
     };
 
     return (
-        <div>
+        <div className = "liked-driver-news">
             <h3>View News For Your Liked Drivers</h3>
             {liked_list_item}
         </div>

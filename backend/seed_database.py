@@ -344,14 +344,16 @@ model.db.session.add(aston_martin)
 model.db.session.commit()
 
 alpine = Constructor.query.filter_by(constructor_id = "214").first()
-alpine.img = '/static/images/constructors/Alpine_F1_Team_Logo.svg'
+alpine.img = '/static/images/constructors/f1_2021_alpine_logo.png'
 model.db.session.add(alpine)
 model.db.session.commit()
+# alpine.img = '/static/images/constructors/Alpine_F1_Team_Logo.svg'
 
 alpha_tauri = Constructor.query.filter_by(constructor_id = "213").first()
-alpha_tauri.img = '/static/images/constructors/Scuderia_Alpha-Tauri.svg'
+alpha_tauri.img = '/static/images/constructors/AlphaTauri-logo-PA.jpeg'
 model.db.session.add(alpha_tauri)
 model.db.session.commit()
+# alpha_tauri.img = '/static/images/constructors/Scuderia_Alpha-Tauri.svg'
 
 red_bull = Constructor.query.filter_by(constructor_id = "9").first()
 red_bull.img = '/static/images/constructors/RedBull.svg'
@@ -359,19 +361,22 @@ model.db.session.add(red_bull)
 model.db.session.commit()
 
 williams = Constructor.query.filter_by(constructor_id = "3").first()
-williams.img = '/static/images/constructors/Williams_Racing_2020_logo.png'
+williams.img = '/static/images/constructors/Logo_Williams_F1.png'
 model.db.session.add(williams)
 model.db.session.commit()
+# williams.img = '/static/images/constructors/Williams_Racing_2020_logo.png'
 
 mclaren = Constructor.query.filter_by(constructor_id = "1").first()
-mclaren.img = '/static/images/constructors/McLaren_Racing_logo.svg'
+mclaren.img = '/static/images/constructors/McLaren2.jpeg'
 model.db.session.add(mclaren)
 model.db.session.commit()
+# mclaren.img = '/static/images/constructors/McLaren_Racing_logo.svg'
 
 alfa_romeo = Constructor.query.filter_by(constructor_id = "51").first()
-alfa_romeo.img = '/static/images/constructors/Alfa_Romeo_F1_Team_ORLEN_logo.svg'
+alfa_romeo.img = '/static/images/constructors/Alfa_Romeo_logo_black.svg'
 model.db.session.add(alfa_romeo)
 model.db.session.commit()
+# alfa_romeo.img = '/static/images/constructors/Alfa_Romeo_F1_Team_ORLEN_logo.svg'
 
 mercedes = Constructor.query.filter_by(constructor_id = "131").first()
 mercedes.img = '/static/images/constructors/Mercedes-Benz_in_Formula_One_logo.svg'

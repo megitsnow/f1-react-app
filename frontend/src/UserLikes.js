@@ -1,9 +1,10 @@
 import LikeDriverCard from './LikeDriverCard.js';
 import {React, useEffect, useState} from 'react';
+import './Style.css';
 
 function UserLikes(props){
     const [likes, setLikes] = useState({});
-    const [isShown, setIsShown] = useState(false)
+    const [isShown, setIsShown] = useState(true)
   
     function toggleShown(){
         setIsShown(prevShown => !prevShown)
@@ -42,8 +43,8 @@ function UserLikes(props){
 
     return(
         <div>
-            <h3 onClick={toggleShown}>{isShown ? "Hide" : "View"} Your Liked Drivers</h3>
-            {isShown && <div>{likesDriverCards}</div>}
+            <h2 className = "hide-show-title"onClick={toggleShown}>{isShown ? "Hide" : "View"} Your Liked Drivers</h2>
+            {isShown && <div className='user-likes'>{likesDriverCards}</div>}
         </div>
     
     );

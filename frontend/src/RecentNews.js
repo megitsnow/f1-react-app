@@ -30,9 +30,10 @@ function RecentNews(props){
         newsCards.push(newsCard);
     }
     return (
-        <div className = "newsGrid">
-            {newsCards}
-        </div>
+                <div className = "newsGrid">
+                    {newsCards}
+                </div>
+    
         
     );
 }
