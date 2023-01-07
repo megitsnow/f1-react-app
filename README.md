@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# F1 Fan: An app for all things Formyla One
+![F1 Fan header]()
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live link:   
+Demo: 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
+- [Project Description](https://github.com/megitsnow/f1-react-app#project-description)
+- [Tech Stack](https://github.com/megitsnow/f1-react-app#tech-stack)
+- [Features](https://github.com/megitsnow/f1-react-app#features)
+- [Possible Future Features](https://github.com/megitsnow/f1-react-app#possible-future-features)
+- [Known Bugs](https://github.com/megitsnow/f1-react-app#known-bugs)
+- [Installation](https://github.com/megitsnow/f1-react-app#installation)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*Log in page*  
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335876-67654d1d-ba9f-424b-bbbe-f7ea72a03d03.png" alt="BitBuddy log in page" width="60%"/> -->
 
-### `npm test`
+*Generating a pet from a custom species*  
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335888-267b7c10-0c40-44b1-a593-837501bdd4f3.png" alt="Generating a pet with a custom species" width="60%"/> -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*Viewing current pet while awaiting custom pet image from Craiyon*  
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335902-cc723245-abb9-400d-ab76-7bd856c922a9.png" alt="Current pet display with egg as pet image" width="60%"/> -->
 
-### `npm run build`
+*Viewing current pet after feeding them their favorite food*
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech Stack
+- Python
+- Flask
+- PostgreSQL
+- SQLAlchemy
+- JavaScript
+- React
+- HTML
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+APIs:
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [IP API](https://ip-api.com/)
+- [Craiyon API](https://github.com/FireHead90544/craiyon.py)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
+- Make an account, log in, log out
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Possible Future Features
+- ***Custom pet species image selection***:
+  - Craiyon generates 9 images, but due to time constraints I designed it so that the image “selection” happens server-side (wrote an algorithm that randomly selects 1 of the 9 images).
+  - Want to show user all 9 images and let them select one (especially since Craiyon images can be very hit or miss)
+- ***Location***: Allow users to enter a custom location
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Known Bugs
+- ***Pet typing response***: If user clicks an interaction button too soon after the previous interaction, the pet’s response text overlaps itself and looks like gibberish, since the previous text finishes concurrent with the new text starting
+- ***Loading buttons***: Only some buttons show a loading indication after being clicked
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Installation
+To run F1 Fan locally on your computer:
+1. **Clone repository** to your local computer
+2. **Get an API key** for OpenWeatherMap to use their API. Sign up for free [here](https://openweathermap.org/api/).
+3. **Store your OWM API key and create a key for the Flask app.** Create a file called secrets.sh in the virtual-pet-app directory. Add the code below to the file and replace the text in the quotation marks as described.
+```
+export FLASK_APP_KEY="ENTER_ANYTHING_HERE"
+export OWM_API_KEY="YOUR_API_KEY_HERE"
+```
+4. **Read the key variables** into your shell
+```
+$ source secrets.sh
+```
+5. Create and activate a **virtual environment**
+```
+$ virtualenv env
+$ source env/bin/activate
+```
+6. Install all **dependencies**
+```
+$ pip3 install -r requirements.txt
+```
+7. Create the **database**
+```
+$ python3 seed_database.py
+```
+8. Start up the **Flask server**
+```
+$ python3 server.py
+```
+9. **Go to `localhost:5000` in your browser and have fun with BitBuddy!**
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
