@@ -59,3 +59,7 @@ h1, p {
     background-color: white; opacity: 80%;
     text-align: center;
 }
+
+h2 {
+    color: white;
+}

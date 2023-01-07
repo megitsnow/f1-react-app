@@ -39,7 +39,7 @@ function DriverCard(props) {
                 <div className="driver-card-info">
                     <div>
                         <h2 className = "driver-surname">{surname}</h2>
-                        <h3 className = "nationality">{nationality}</h3>
+                        <p className = "nationality">{nationality}</p>
                     </div>
                     <div>
                             {liked ? <Favorite onClick = {addToLikes}/> : <FavoriteBorder onClick = {addToLikes}/>}

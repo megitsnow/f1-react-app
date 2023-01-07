@@ -30,11 +30,11 @@ function LogIn(props) {
                         value={logInData.password}
                     /> 
                 </div>
-                <div>
-                    <Link to="/sign-up" className = "input-fields">Not A User? Sign Up</Link>
+                <div className = "sign-up-link">
+                    <Link to="/sign-up" className = "sign-up-link">Not A User? Sign Up</Link>
                 </div>
                 <div>
-                    <button className = "input-fields">Log In</button>
+                    <button>Log In</button>
                 </div>
             </form>
             {/* <img src = {background}/> */}

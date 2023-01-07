@@ -5,7 +5,7 @@
     font-family: 'Titillium Web', sans-serif;
     font-size: 400;
     cursor: pointer;
-    color: #a9a9a9;
+    color:  #d3d3d3;
     /* background-color: black; */
     margin: 2px;
 }
@@ -57,8 +57,8 @@ a:visited {
 }
 
 .input-fields {
-    padding: 3px;
     margin: 5px;
+    padding: 8px 16px 8px 16px;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -68,6 +68,7 @@ a:visited {
     align-items: center;
     margin: 0px 10px 10px 10px;
     padding: 10px;
+    font-size: 1.2rem;
 }
 
 .nav-bar-logged-in {
@@ -75,24 +76,23 @@ a:visited {
     align-items: center;
     margin: 0px 10px 10px 10px;
     padding: 10px;
+    font-size: 1.2rem;
 }
 
 a {
     border: none;
+    color: #d3d3d3;
 }
 
 .nav-link {
     margin: 5px;
-    border: none;
+    border-bottom-width: 0;
+    
     /* color: black; */
 }
 
 .nav-bar-end {
     margin-left: auto;
-}
-
-button.input-fields {
-    padding: 3px 6px;
 }
 
 .driverImage {
@@ -110,7 +110,7 @@ button.input-fields {
     display: flex;
     flex-direction: column;
     margin: 5px;
-    border: 2px solid #E0E0E0;
+    border: 2px solid #b1a7a6;
     border-radius: 2px;
 }
 
@@ -124,6 +124,14 @@ button.input-fields {
     margin-top: 0px;
     font-style: italic;
     margin-bottom: 0px;
+}
+
+.nationality, .countryLocation, .user-info-para {
+    background-color: black;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #b1a7a6;
 }
 
 .driver-surname, .countryName {
@@ -165,7 +173,7 @@ caption {
 .newsCard {
     width: 300px;
     margin: 5px;
-    border: 2px solid #E0E0E0;
+    border: 2px solid #b1a7a6;
     border-radius: 2px;
     text-align: center;
 }
@@ -211,7 +219,7 @@ caption {
 .mapsDiv {
     width: 300px;
     height: 500px;
-    border: 2px solid #E0E0E0;
+    border: 2px solid #b1a7a6;
     border-radius: 2px;
     margin: 5px;
 }
@@ -262,11 +270,12 @@ caption {
 button {
     color: white;
     border: none;
-    width: 150px;
     background-color: gray;
     border-radius: 4px;
-    height: 25px;
-    padding: 2px 4px 2px 4px;
+    padding: 8px 16px 8px 16px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 ul {
@@ -289,5 +298,15 @@ ul {
 .hide-show-title {
     padding-left: 30px;
 }
+
+.sign-up-link {
+    color: black;
+}
+
+Link {
+    border: none;
+}
+
+
 
 

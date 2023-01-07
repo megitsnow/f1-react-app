@@ -47,12 +47,11 @@ function CloudinaryWidget() {
           style={{
                 color: 'white',
                 border: 'none',
-                width: '200px',
                 backgroundColor: 'gray',
                 borderRadius: '4px',
-                height: '25px',
-                padding: '2px 4px 2px 4px',
-                fontFamily: 'Titillium Web'
+                padding: '8px 16px 8px 16px',
+                fontFamily: 'Titillium Web',
+                fontSize: '400'
               }} 
           folder={'my_folder'} 
           cropping={false} 

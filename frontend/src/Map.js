@@ -33,7 +33,7 @@ function MapComponent({ name, lat, lng, location, country, url}) {
           </GoogleMap>
         </LoadScript>
         <h2 className = "countryName">{name}</h2>
-        <h3 className = "countryLocation">{location}, {country}</h3>
+        <p className = "countryLocation">{location}, {country}</p>
         <a href = {url} target= "_blank"> Learn more about {name}</a>
       </div>
     </div>
