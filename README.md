@@ -1,4 +1,4 @@
-# F1 Fan: An app for all things Formyla One
+# F1 Fan: An app for all things Formula One
 ![F1 Fan header]()
 
 Live link:   
@@ -11,23 +11,35 @@ Demo:
 - [Features](https://github.com/megitsnow/f1-react-app#features)
 - [Possible Future Features](https://github.com/megitsnow/f1-react-app#possible-future-features)
 - [Known Bugs](https://github.com/megitsnow/f1-react-app#known-bugs)
-- [Installation](https://github.com/megitsnow/f1-react-app#installation)
 
 
 ## Project Description
 
-*Log in page*  
+You've watched Drive to Survive and aren't sure where to turn next to fuel your newfound passion? F1 Fan was built for you. Fans new and old can like and follow their favorite drivers, read the latest news from the pit lane, and explore race circuits all over the world!  Based on their likes and preferences, users have access to tailored news and can also see others with similar interests. If interested to learn more about a driver's or constructor's performance, users can click on their respective pictures for historical performnace information. To create a tailored experience, a user can upload their own photo and view their likes. Grab your helmet and see you in the fast lane!
+
+*Log in page & Sign up pages*  
 <!-- <img src="https://user-images.githubusercontent.com/96971685/196335876-67654d1d-ba9f-424b-bbbe-f7ea72a03d03.png" alt="BitBuddy log in page" width="60%"/> -->
 
-*Generating a pet from a custom species*  
+*View & Like Your Favorite Drivers*  
 <!-- <img src="https://user-images.githubusercontent.com/96971685/196335888-267b7c10-0c40-44b1-a593-837501bdd4f3.png" alt="Generating a pet with a custom species" width="60%"/> -->
 
-*Viewing current pet while awaiting custom pet image from Craiyon*  
+*Click on the Driver Image to View Their Historical Stats*  
 <!-- <img src="https://user-images.githubusercontent.com/96971685/196335902-cc723245-abb9-400d-ab76-7bd856c922a9.png" alt="Current pet display with egg as pet image" width="60%"/> -->
 
-*Viewing current pet after feeding them their favorite food*
+*Access Information on Constructors & Their Stats*
 <!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
 
+*Read recent Formula One News & Tailored News Based on Your Preferences*
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
+
+*Explore Formula One Circuits Across the World*
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
+
+*View & Hide Your Personal Information and Liked Driver Information*
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
+
+*Upload a headshot to your profile using Cloudinary!*
+<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
 
 ## Tech Stack
 - Python
@@ -41,56 +53,27 @@ Demo:
 
 
 APIs:
-- [OpenWeatherMap API](https://openweathermap.org/api)
-- [IP API](https://ip-api.com/)
-- [Craiyon API](https://github.com/FireHead90544/craiyon.py)
+- [Ergast Moter Racing Developer API](https://ergast.com/mrd/)
+- [News API](https://newsapi.org/)
+- [Cloudinary API](https://cloudinary.com/)
+- [React Google Maps API](https://react-google-maps-api-docs.netlify.app/)
+
 
 
 ## Features
-- Make an account, log in, log out
+- Create an account, log in, and log out
 
 
 
 ## Possible Future Features
-- ***Custom pet species image selection***:
-  - Craiyon generates 9 images, but due to time constraints I designed it so that the image “selection” happens server-side (wrote an algorithm that randomly selects 1 of the 9 images).
-  - Want to show user all 9 images and let them select one (especially since Craiyon images can be very hit or miss)
-- ***Location***: Allow users to enter a custom location
+- ***Allow users to follow other users***:
+  - Unfortunately this was not a feature I had in mind initially and will require creating a new table in the database. In future iterations I hope to add a feature for users to follow and message each other.
+- ***Search bars***: Given the fast amount of information on some of the pages, such as the recent news and circuits tab, in version 2.0 I hope to add in search bars to make the pages easier to naviagte for users.
+- ***More password security***: To talk to Chad about this****.
+- ***Allow users to login using their Gmail and other accounts***: To make signing up and logging in for the F1 App easier, in version 2.0 I will add in an authentification API to allow users to create and login via their gmail and other accounts.
 
 
 ## Known Bugs
-- ***Pet typing response***: If user clicks an interaction button too soon after the previous interaction, the pet’s response text overlaps itself and looks like gibberish, since the previous text finishes concurrent with the new text starting
-- ***Loading buttons***: Only some buttons show a loading indication after being clicked
+- ***Users are unable to unlike a driver***: Users are currently able to like a driver. Before my MVP was due, I was unable to give them the ability to unlike the driver and have the like removed from the database.
 
 
-## Installation
-To run F1 Fan locally on your computer:
-1. **Clone repository** to your local computer
-2. **Get an API key** for OpenWeatherMap to use their API. Sign up for free [here](https://openweathermap.org/api/).
-3. **Store your OWM API key and create a key for the Flask app.** Create a file called secrets.sh in the virtual-pet-app directory. Add the code below to the file and replace the text in the quotation marks as described.
-```
-export FLASK_APP_KEY="ENTER_ANYTHING_HERE"
-export OWM_API_KEY="YOUR_API_KEY_HERE"
-```
-4. **Read the key variables** into your shell
-```
-$ source secrets.sh
-```
-5. Create and activate a **virtual environment**
-```
-$ virtualenv env
-$ source env/bin/activate
-```
-6. Install all **dependencies**
-```
-$ pip3 install -r requirements.txt
-```
-7. Create the **database**
-```
-$ python3 seed_database.py
-```
-8. Start up the **Flask server**
-```
-$ python3 server.py
-```
-9. **Go to `localhost:5000` in your browser and have fun with BitBuddy!**

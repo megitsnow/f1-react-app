@@ -54,7 +54,7 @@ function SignUpForm(props) {
                 />
             </div>
             <div>
-                <button>
+                <button className = "sign-up-button">
                     Sign up
                 </button>
             </div>

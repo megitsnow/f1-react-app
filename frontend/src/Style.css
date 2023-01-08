@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
+/* lightMode & DarkMode */
+
 .lightMode {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -26,6 +28,8 @@ a:visited {
     color: inherit;
 }
 
+/* log in and sign up pages  */
+
 .bg {
     background-image: url('./images/background.jpg');
     height: 100vh;
@@ -44,6 +48,12 @@ a:visited {
     margin: 0px;
 }
 
+.sign-up-link {
+    color: black;
+    margin-left: 4px;
+    margin-bottom: 5px;
+}
+
 
 .form {
     display: flex;
@@ -54,12 +64,22 @@ a:visited {
     align-items: center;
     justify-content: center;
     margin: 15px;
+    text-align: left;
 }
 
 .input-fields {
     margin: 5px;
     padding: 8px 16px 8px 16px;
     font-family: 'Titillium Web', sans-serif;
+}
+
+.sign-up-button {
+    margin-top: 5px;
+    margin-left: 4px;
+}
+
+.log-in-button {
+    margin-left: 4px;
 }
 
 .nav-bar-logged-out {
@@ -79,20 +99,18 @@ a:visited {
     font-size: 1.2rem;
 }
 
-a {
-    border: none;
-    color: #d3d3d3;
-}
-
 .nav-link {
     margin: 5px;
-    border-bottom-width: 0;
-    
-    /* color: black; */
+    text-decoration: none;
 }
 
 .nav-bar-end {
     margin-left: auto;
+}
+
+a {
+    border: none;
+    color: #d3d3d3;
 }
 
 .driverImage {
@@ -100,6 +118,8 @@ a {
     height: 300px;
     margin-bottom: 0px;
 }
+
+/* driver info  */
 
 .driver-surname {
     font-size: 600;
@@ -297,10 +317,6 @@ ul {
 
 .hide-show-title {
     padding-left: 30px;
-}
-
-.sign-up-link {
-    color: black;
 }
 
 Link {

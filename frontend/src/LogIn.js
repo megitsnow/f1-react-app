@@ -34,7 +34,7 @@ function LogIn(props) {
                     <Link to="/sign-up" className = "sign-up-link">Not A User? Sign Up</Link>
                 </div>
                 <div>
-                    <button>Log In</button>
+                    <button className = "log-in-button">Log In</button>
                 </div>
             </form>
             {/* <img src = {background}/> */}
