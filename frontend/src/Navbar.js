@@ -26,7 +26,7 @@ function NavBar({inSession}) {
             .then((response) => response.json())
             .then((responseJson) => {
             console.log("I got here")
-            window.location.href = "/"
+            window.location.href = "/homepage"
             });
         
     }
@@ -35,7 +35,7 @@ function NavBar({inSession}) {
         return (
             <nav>
                 <div className = "nav-bar-logged-in">
-                        <Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link>
+                        <Link to = "/homepage"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link>
                         <Link to = "/drivers" className = "nav-link">Drivers</Link>
                         <Link to = "/constructors" className = "nav-link">Constructors</Link>
                         <Link to = "/circuits" className = "nav-link">Circuits</Link>
@@ -57,7 +57,7 @@ function NavBar({inSession}) {
             <section className = "nav-bar-logged-out">
                 
                     <Link to = "/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" height="30" alt="logo" /></Link>
-                    <Link to = "/log-in">Log In</Link>
+                    <Link to = "/log-in" className = "nav-link">Log In</Link>
         
             </section>
             </nav>

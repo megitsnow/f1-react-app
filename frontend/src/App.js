@@ -21,6 +21,8 @@ import DriverNews from './DriverNews.js'
 import DriverNewsById from './DriverNewsById.js'
 import UserList from './UserList.js'
 import UserProfileById from './UserProfileById.js'
+import LandingPage from './LandingPage.js'
+
 
 
 
@@ -68,7 +70,7 @@ function App() {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            window.location.href = "/"
+            window.location.href = "/homepage"
             });
     }
 
@@ -98,7 +100,7 @@ function App() {
         })
             .then((response) => response.json())
             .then((responseJson) => {
-            window.location.href = "/"
+            window.location.href = "/homepage"
             });
     }   
 
@@ -109,10 +111,11 @@ function App() {
     <BrowserRouter>
       <NavBar inSession = {inSession}/>
       <Routes>
-      <Route exact path="/" element = {<Fragment>
+      <Route exact path="/homepage" element = {<Fragment>
         <Carousel/>
         </Fragment>}/>
         <Route exact path="/constructors" element = {<Constructors/>}/>
+        <Route exact path="/" element = {<LandingPage/>}/>
         <Route path="/constructors/:constructorId" element = {<ConstructorDetails/>}/>
         <Route exact path="/drivers" element = {<Drivers/>}/>
         <Route path="/drivers/:driverId" element = {<DriverDetails/>}/>

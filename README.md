@@ -1,4 +1,4 @@
-# F1 Fan: An app for all things Formula One
+# F1 Fan: An app for All Things Formula One (WORK IN PROGRESS)
 ![F1 Fan header](images/READMEHEADER.png)
 
 Live link:   
@@ -17,29 +17,7 @@ Demo:
 
 You've watched Drive to Survive and aren't sure where to turn next to fuel your newfound passion? F1 Fan was built for you. Fans new and old can like and follow their favorite drivers, read the latest news from the pit lane, and explore race circuits all over the world!  Based on their likes and preferences, users have access to tailored news and can also see others with similar interests. If interested to learn more about a driver's or constructor's performance, users can click on their respective pictures for historical performnace information. To create a tailored experience, a user can upload their own photo and view their likes. Grab your helmet and see you in the fast lane!
 
-*Log in page & Sign up pages*  
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335876-67654d1d-ba9f-424b-bbbe-f7ea72a03d03.png" alt="BitBuddy log in page" width="60%"/> -->
-
-*View & Like Your Favorite Drivers*  
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335888-267b7c10-0c40-44b1-a593-837501bdd4f3.png" alt="Generating a pet with a custom species" width="60%"/> -->
-
-*Click on the Driver Image to View Their Historical Stats*  
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335902-cc723245-abb9-400d-ab76-7bd856c922a9.png" alt="Current pet display with egg as pet image" width="60%"/> -->
-
-*Access Information on Constructors & Their Stats*
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
-
-*Read recent Formula One News & Tailored News Based on Your Preferences*
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
-
-*Explore Formula One Circuits Across the World*
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
-
-*View & Hide Your Personal Information and Liked Driver Information*
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
-
-*Upload a headshot to your profile using Cloudinary!*
-<!-- <img src="https://user-images.githubusercontent.com/96971685/196335916-dd4f1842-6d2a-4c83-826a-03147acf02a9.png" alt="Current pet display with pet image from Craiyon and pet response to being fed: 'Hm, grilled corn? Mmm, that was the best thing I've ever had!'" width="60%"/> -->
+[F1 Fan App GIF of Application](images/F1FanAppGIF.gif)
 
 ## Tech Stack
 - Python
