@@ -1,4 +1,4 @@
-# F1 Fan: An app for All Things Formula One (WORK IN PROGRESS)
+# F1 Fan: An app for All Things Formula One 
 ![F1 Fan header](images/READMEHEADER.png)
 
 Live link:   
@@ -15,7 +15,7 @@ Demo: [F1 Fan App Youtube Video](https://www.youtube.com/watch?v=Njvq3IUBSck)
 
 ## Project Description
 
-You've watched Drive to Survive and aren't sure where to turn next to fuel your newfound passion? F1 Fan was built for you. Fans new and old can like and follow their favorite drivers, read the latest news from the pit lane, and explore race circuits all over the world!  Based on their likes and preferences, users have access to tailored news and can also see others with similar interests. If interested to learn more about a driver's or constructor's performance, users can click on their respective pictures for historical performnace information. To create a tailored experience, a user can upload their own photo and view their likes. Grab your helmet and see you in the fast lane!
+You've watched Drive to Survive and aren't sure where to turn next to fuel your newfound passion? F1 Fan was built for you. Fans new and old can like and follow their favorite drivers, read the latest news from the pit lane, and explore race circuits all over the world!  Based on their likes and preferences, users have access to tailored news and can also see others with similar interests. If interested to learn more about a driver's or constructor's performance, users can click on their respective pictures for historical performance information. To create a tailored experience, a user can upload their own photo and view their likes. Grab your helmet and see you in the fast lane!
 
 [F1 Fan App GIF of Functionality](images/F1FanAppGIF.gif)
 
@@ -31,7 +31,7 @@ You've watched Drive to Survive and aren't sure where to turn next to fuel your 
 
 
 APIs:
-- [Ergast Moter Racing Developer API](https://ergast.com/mrd/)
+- [Ergast Motor Racing Developer API](https://ergast.com/mrd/)
 - [News API](https://newsapi.org/)
 - [Cloudinary API](https://cloudinary.com/)
 - [React Google Maps API](https://react-google-maps-api-docs.netlify.app/)
