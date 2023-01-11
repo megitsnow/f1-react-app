@@ -2,7 +2,7 @@
 ![F1 Fan header](images/READMEHEADER.png)
 
 Live link:   
-Demo: 
+Demo: [F1 Fan App Youtube Video](https://www.youtube.com/watch?v=Njvq3IUBSck)
 
 
 ## Table of Contents
@@ -17,7 +17,7 @@ Demo:
 
 You've watched Drive to Survive and aren't sure where to turn next to fuel your newfound passion? F1 Fan was built for you. Fans new and old can like and follow their favorite drivers, read the latest news from the pit lane, and explore race circuits all over the world!  Based on their likes and preferences, users have access to tailored news and can also see others with similar interests. If interested to learn more about a driver's or constructor's performance, users can click on their respective pictures for historical performnace information. To create a tailored experience, a user can upload their own photo and view their likes. Grab your helmet and see you in the fast lane!
 
-[F1 Fan App GIF of Application](images/F1FanAppGIF.gif)
+[F1 Fan App GIF of Functionality](images/F1FanAppGIF.gif)
 
 ## Tech Stack
 - Python
@@ -40,15 +40,20 @@ APIs:
 
 ## Features
 - Create an account, log in, and log out
+- Like drivers and view their historical stats
+- Browse constructor logos and view their race results
+- Learn more about various circuits around the world 
+- Read about recent F1 Events and have access to tailored news based on your likes
+- View your user information as well as liked drivers
+- Upload a photo of yourself by using the Cloudinary API
 
 
 
 ## Possible Future Features
 - ***Allow users to follow other users***:
-  - Unfortunately this was not a feature I had in mind initially and will require creating a new table in the database. In future iterations I hope to add a feature for users to follow and message each other.
-- ***Search bars***: Given the fast amount of information on some of the pages, such as the recent news and circuits tab, in version 2.0 I hope to add in search bars to make the pages easier to naviagte for users.
-- ***More password security***: To talk to Chad about this****.
-- ***Allow users to login using their Gmail and other accounts***: To make signing up and logging in for the F1 App easier, in version 2.0 I will add in an authentification API to allow users to create and login via their gmail and other accounts.
+  - Following a user will require creating a new table in the database. In future iterations I hope to add a feature for users to follow each other and potentially message each other.
+- ***Search bars***: Given the vast amount of information on some of the pages, such as the recent news and circuits tab, in version 2.0 I hope to add in search bars to make the pages easier to naviagte for users.
+- ***Allow users to login using their Gmail and other accounts***: To make signing up and logging in for the F1 App easier, in version 2.0 I will add in an authentification API to allow users to create and login via their gmail and other accounts. This will also help to increase secruity as user login information will not be stored in the database.
 
 
 ## Known Bugs
