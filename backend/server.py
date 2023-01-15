@@ -8,7 +8,7 @@ import crud
 import os
 import requests 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../build", static_url_path="/")
 app.secret_key = "dev"
 
 API_KEY = os.environ["NEWS_API_KEY"]
@@ -16,11 +16,11 @@ CLOUDINARY_KEY = os.environ["CLOUDINARY_API_KEY"]
 CLOUDINARY_SECRET = os.environ["CLOUDINARY_API_SECRET"]
 CLOUD_NAME = "dzqtjox0u"
 
-@app.route("/")
-def login():
-    """Returns login page."""
+# @app.route("/")
+# def login():
+#     """Returns login page."""
 
-    return render_template('index.html')
+#     return render_template('index.html')
 
 # Sign Up Routes
 ## Need to update this so that it looks up more than just the passwords matching
@@ -451,6 +451,15 @@ def other_user_profiles(user_id):
     print(user)
     print("******USER**********")
     return jsonify(user.to_dict())
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def index(path):
+    return app.send_static_file("index.html")
+
+@app.errorhandler(404)
+def not_found(_error):
+    return app.send_static_file("index.html")
 
 if __name__ == "__main__":
     connect_to_db(app)

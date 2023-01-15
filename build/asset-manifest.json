@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.18aead87.css",
+    "main.js": "/static/js/main.d0f0d5d4.js",
+    "static/js/787.e44a2e12.chunk.js": "/static/js/787.e44a2e12.chunk.js",
+    "static/media/SignUp.jpg": "/static/media/SignUp.c5e79ea42621cd9ce78f.jpg",
+    "static/media/Unsplash1.jpg": "/static/media/Unsplash1.5603b682cd87fe0e2447.jpg",
+    "static/media/Unsplash4.jpg": "/static/media/Unsplash4.3bef05b63fbf4769659c.jpg",
+    "static/media/Unsplash2.jpg": "/static/media/Unsplash2.6b4624b5431ab7a838bf.jpg",
+    "static/media/LandingPage.jpg": "/static/media/LandingPage.b6c6a1ec6da3835c2d9b.jpg",
+    "static/media/background.jpg": "/static/media/background.569d7584b1b1a7dd3d9e.jpg",
+    "static/media/Monaco.jpeg": "/static/media/Monaco.126d1a80f4c5b8807500.jpeg",
+    "static/media/Ferrari.jpeg": "/static/media/Ferrari.3ea8fa91db39b26c5f0b.jpeg",
+    "static/media/Alonso.jpeg": "/static/media/Alonso.6fa15eed252c07bfb2cf.jpeg",
+    "static/media/Bottas.jpeg": "/static/media/Bottas.67156efd22b73b554754.jpeg",
+    "static/media/Drama.jpeg": "/static/media/Drama.ff244372b306c4bdc3fa.jpeg",
+    "static/media/Albon.jpeg": "/static/media/Albon.7bbdb835a972401d6e4e.jpeg",
+    "static/media/hamilton.webp": "/static/media/hamilton.2bc2b209d68bd2d50e68.webp",
+    "index.html": "/index.html",
+    "main.18aead87.css.map": "/static/css/main.18aead87.css.map",
+    "main.d0f0d5d4.js.map": "/static/js/main.d0f0d5d4.js.map",
+    "787.e44a2e12.chunk.js.map": "/static/js/787.e44a2e12.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18aead87.css",
+    "static/js/main.d0f0d5d4.js"
+  ]
+}
