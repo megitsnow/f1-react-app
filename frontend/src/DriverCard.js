@@ -35,6 +35,7 @@ function DriverCard(props) {
             <div className="driver-card">
                 <div>
                     <Link to={`/drivers/${id}`}><img src = {img} className = "driverImage"/></Link>
+        
                 </div>
                 <div className="driver-card-info">
                     <div>
