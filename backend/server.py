@@ -16,16 +16,6 @@ CLOUDINARY_KEY = os.environ["CLOUDINARY_API_KEY"]
 CLOUDINARY_SECRET = os.environ["CLOUDINARY_API_SECRET"]
 CLOUD_NAME = "dzqtjox0u"
 
-# @app.route("/")
-# def login():
-#     """Returns login page."""
-
-#     return render_template('index.html')
-
-# Sign Up Routes
-## Need to update this so that it looks up more than just the passwords matching
-## Need to have it check if the user already exixts, if it is a valid email etc
-
 @app.route("/api/sign-up", methods=["POST"])
 def handle_signup():
     """Create a new user."""
@@ -271,7 +261,7 @@ def active_driver_data():
 @app.route("/api/recent-news")
 def get_recent_articles():
     """Get recent articles"""
-    url =f'https://newsapi.org/v2/everything?q=Formula One Racing&from=2022-12-25&sortBy=popularity&apiKey={API_KEY}'
+    url =f'https://newsapi.org/v2/everything?q=Formula One Racing&from=2023-1-21&sortBy=popularity&apiKey={API_KEY}'
 
     response = requests.get(url)
     data = response.json()
@@ -416,7 +406,7 @@ def driver_indiv_news(driver_id):
     print(fullname)
     print("*********FULLNAME")
     
-    url =f'https://newsapi.org/v2/everything?q={fullname}&from=2022-12-25&sortBy=popularity&apiKey={API_KEY}'
+    url =f'https://newsapi.org/v2/everything?q={fullname}&from=2023-1-21&sortBy=popularity&apiKey={API_KEY}'
 
     response = requests.get(url)
     data = response.json()

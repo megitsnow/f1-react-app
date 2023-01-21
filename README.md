@@ -1,7 +1,7 @@
 # F1 Fan: An app for All Things Formula One 
 ![F1 Fan header](images/READMEHEADER.png)
 
-Live link:   
+Live link: [F1 Fan App Website](http://52.10.130.154/)
 Demo: [F1 Fan App Youtube Video](https://www.youtube.com/watch?v=Njvq3IUBSck)
 
 
